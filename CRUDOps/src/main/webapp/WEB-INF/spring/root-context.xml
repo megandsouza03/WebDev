@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+			<bean id="userValidator" class="com.me.crud.validator.UserValidator"/>
+		<bean id="userDao" class="com.me.crud.dao.StudentDAO" ></bean>
+
+	<bean id="coopValidator" class="com.me.crud.validator.CoopValidator"/>
+		<bean id="coopDao" class="com.me.crud.dao.CoopDAO" ></bean>
+			
+			<bean id="jobValidator" class="com.me.crud.validator.JobValidator"/>
+		<bean id="jobDao" class="com.me.crud.dao.JobDAO" ></bean>
+		<bean id="appDao" class="com.me.crud.dao.ApplicationDAO" ></bean>
+		
+		<bean id="studentDao" class="com.me.crud.dao.StudentDAO" ></bean>
+		<bean id="appValidator" class="com.me.crud.validator.ApplicationValidator"/>
+		
+		<bean id="fileUploadDao" class="com.me.crud.dao.FileUploadDAOImpl" ></bean>
+		<bean id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- max upload size in bytes -->
+        <property name="maxUploadSize" value="20971520" /> <!-- 20MB -->
+         
+        <!-- max size of file in memory (in bytes) -->
+        <property name="maxInMemorySize" value="1048576" /> <!-- 1MB -->
+ 
+    </bean>
+</beans>
